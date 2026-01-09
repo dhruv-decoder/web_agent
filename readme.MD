@@ -86,8 +86,9 @@ python main.py
 1. **ChromaDB**: Lightweight, no separate database server required
 2. **HuggingFace Embeddings**: Free, runs locally (all-MiniLM-L6-v2)
 3. **Playwright**: Reliable web scraping with JavaScript rendering support
-4. **LangChain**: Structured prompt management and LLM integration
-5. **50% Similarity Threshold**: Balances cache hits vs. fresh results
+4. **LangChain**: Structured prompt management and LLM integration framework standardizing agentic applications with easy to switch syntaxes for all parts 
+5. **50% Similarity Threshold**: Balances cache hits vs. fresh results (This was chosen after testing with 75% 70% 40% and 50% threshold)
+6. **Groq api as llm**: provides instant responses known for it's inference speed + generous and reliable free tier 
 
 ## Environment Variables
 
