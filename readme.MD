@@ -7,7 +7,7 @@ An intelligent web search agent that validates queries, caches results, and prov
 - **Query Validation**: Uses LLM to filter out non-searchable queries
 - **Semantic Caching**: ChromaDB vector storage finds similar past queries (50% similarity threshold)
 - **Web Scraping**: Playwright-based scraper fetches top 5 search results
-- **AI Summarization**: Gemini 2.5 Flash generates concise answers
+- **AI Summarization**: Groq api(llama-3.1-8b-instant)generates concise answers
 - **Persistent Storage**: Results saved for future similarity matching
 
 ## Architecture
@@ -19,7 +19,7 @@ User Query → Validator → Cache Check → [Cache Hit: Return]
                                     ↓
                          Web Scraper (DuckDuckGo + Playwright)
                                     ↓
-                            AI Summarization (Gemini)
+                            AI Summarization (llama-3.1-8b-instant)
                                     ↓
                           Store in Vector DB (ChromaDB)
 ```
@@ -39,7 +39,7 @@ playwright install chromium
 
 # Set up environment
 cp .env.example .env
-# Add your GEMINI_API_KEY to .env
+# Add your groq api key to .env
 ```
 
 ## Usage
@@ -62,7 +62,7 @@ python main.py
 
 ## Tech Stack
 
-- **LLM**: Google Gemini 2.5 Flash
+- **LLM**: llama-3.1-8b-instant
 - **Framework**: LangChain
 - **Vector DB**: ChromaDB with HuggingFace embeddings
 - **Web Scraping**: Playwright + DuckDuckGo Search
@@ -92,9 +92,7 @@ python main.py
 ## Environment Variables
 
 ```env
-GEMINI_API_KEY=your_api_key_here
+GROQ_API_KEY=your_api_key_here
 ```
 
-## License
 
-MIT
